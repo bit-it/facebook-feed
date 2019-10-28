@@ -3,7 +3,7 @@
 ## Manual Installation
 
 1. Download the Plugin
-2. Place it inside your sites plugin Folder
+2. Place the facebook-feed folder inside your Projects Plugin Section
 > The path should look like this: **/your/site/grav/user/plugins/facebook-feed**
 
 ## Usage
