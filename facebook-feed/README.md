@@ -3,7 +3,7 @@
 ## Manual Installation
 
 1. Download the Plugin
-2. Place it inside your sites plugin Folder
+2. Place the facebook-feed folder inside your Projects Plugin Section
 > The path should look like this: **/your/site/grav/user/plugins/facebook-feed**
 
 ## Usage
@@ -12,5 +12,3 @@
 2. Log into the Backend and open the Facebook Feed Plug in
 3. Past the Facebook Page Id and your previously created AccessToken into the provides fields
 3. add the **{{ facebook_feed() }}** function anywhere to your site
-
-
