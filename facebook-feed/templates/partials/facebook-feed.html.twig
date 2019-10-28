@@ -1,0 +1,43 @@
+
+{{ dump(grav) }}
+<section class="fb--container">
+    <h2 class="fb--main-headline">
+        {{ pluginConfig.headline }}
+    </h2>
+    {% for item in data.values %}
+        <div class="fb--content">
+            <h4 class="fb--content-date">
+                {{ item.postDate }}
+            </h4>
+            {% if item.image and item.album == false %}
+                <figure class="fb--img fb--img-feed">
+                    <img src="{{ item.image }}" alt="post image" title="facebook post image">
+                </figure>
+            {% endif %}
+            {% if item.album %}
+                <div class="fb--album">
+                    {% for image in item.album %}
+                        <figure class="fb--img fb--img-album">
+                            <img src="{{ image }}" alt="album images" title="facebook album images">
+                        </figure>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if item.image == false and pluginConfig.imgFallback %}
+                {% set imgFallback = page.find('/media/facebook-feed') %}
+                {% set test = pathinfo(pluginConfig.imgFallback) %}}
+                <figure class="fb--img fb--img-fallback">
+                    <img src="user/themes/{{ pluginConfig.theme }}/media/facebook-feed/{{ pluginConfig.imgFallback }}" alt="{{ pluginConfig.imgFallbackAlt }}" title="{{ pluginConfig.imgFallbackTitle }}">
+                </figure>
+            {% endif %}
+            {% if item.message %}
+                <p class="fb--content-message">
+                    {{ item.message }}
+                </p>
+            {% endif %}
+            <a href="{{ item.url }}" alt="{{ pluginConfig.postLinkAlt }}" class="fb--content-url" target="_BLANK" >{{ pluginConfig.postLinkTitle }}</a>
+        </div>
+    {% endfor %}
+    <a href="https://www.facebook.com/{{ pluginConfig.pageId }}" alt="{{ pluginConfig.mainLinkAlt }}" class="fb--main-url" target="_BLANK">{{ pluginConfig.mainLinkTitle }}</a>
+</section>
+

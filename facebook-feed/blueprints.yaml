@@ -1,0 +1,139 @@
+name: Facebook Feed
+version: 0.1.0
+description: Insert your Facebookfeed into your Site
+icon: plug
+author:
+  name: Bjoern Bohr
+  email: bjoern.bohr@gmail.com
+homepage: https://github.com/bjoern-bohr/grav-plugin-facebook-feed
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/bjoern-bohr/grav-plugin-facebook-feed/issues
+docs: https://github.com/bjoern-bohr/grav-plugin-facebook-feed/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    basics:
+      type: section
+      title: Initial Setup
+      underline: false
+
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    fb_settings.page_id:
+      type: text
+      size: small
+      label: Facebook Page Id
+      placeholder: "Page Id"
+      help: To find your Id visit https://findmyfbid.com/
+      validate:
+        type: string
+
+    fb_settings.token:
+      type: text
+      size: large
+      label: Facebook Access Token
+      placeholder: "Access Token"
+      help: Visit https://developers.facebook.com to create an Facebook App
+      validate:
+        type: string
+
+    fb_settings.limit:
+      type: text
+      size: small
+      label: Limit Post Number
+      help: Limits the number of Post the Plugin will show
+      default: 10
+      validate:
+        type: string
+
+    advanced:
+      type: section
+      title: Component Setup
+      underline: false
+
+    fb.headline:
+      type: text
+      size: medium
+      label: Component Headline
+      placeholder: 'Facebook Component'
+      validate:
+        type: string
+
+    fb.postLinkTitle:
+      type: text
+      size: medium
+      label: Post Link title
+      placeholder: 'Enter Post Link Title'
+      default: Show Post
+      validate:
+        type: string
+
+    fb.postLinkAlt:
+      type: text
+      size: medium
+      label: Post Link Fallback Alt Text
+      default: Show Posts
+
+    fb.mainLinkTitle:
+      type: text
+      size: medium
+      label: Facebook Page Link Title
+      placeholder: 'Enter Facebook Page Link Title'
+      default: Visit Facebook
+      validate:
+        type: string
+
+    fb.mainLinkAlt:
+      type: text
+      size: medium
+      label: Facebook Page Link Alt
+      default: Visit Facebook
+
+    fallback:
+      type: section
+      title: Fallback image Selection
+      underline: false
+
+    fb.imgFallback:
+      type: file
+      size: medium
+      label: Upload Image Fallback
+      destination: 'theme@:/media/facebook-feed'
+      multiple: false
+      accept:
+        - .png
+        - .jpg
+        - .gif
+
+    fb.imgFallbackSelect:
+      type: filepicker
+      folder: 'theme@:/media/facebook-feed'
+      label: Select Image Fallback
+      preview_images: true
+      size: medium
+      accept:
+        - .png
+        - .jpg
+        - .gif
+
+    fb.imgFallbackAlt:
+      type: text
+      size: medium
+      label: Image Fallback Alt Text
+
+    fb.imgFallbackTitle:
+      type: text
+      size: medium
+      label: Image Fallback Title Text
