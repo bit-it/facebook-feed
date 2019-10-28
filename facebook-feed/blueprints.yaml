@@ -1,15 +1,14 @@
 name: Facebook Feed
 version: 0.1.0
-description: Insert your Facebookfeed into your Site
-icon: plug
+description: Insert your Facebook-Feed into your Site
+icon: facebook
 author:
   name: Bjoern Bohr
   email: bjoern.bohr@gmail.com
-homepage: https://github.com/bjoern-bohr/grav-plugin-facebook-feed
-demo: http://demo.yoursite.com
-keywords: grav, plugin, etc
-bugs: https://github.com/bjoern-bohr/grav-plugin-facebook-feed/issues
-docs: https://github.com/bjoern-bohr/grav-plugin-facebook-feed/blob/develop/README.md
+homepage: https://github.com/bit-it/grav-facebook-feed
+keywords: grav, plugin, facebppk, feed, etc
+bugs: https://github.com/bit-it/grav-facebook-feed/issues
+docs: https://github.com/bit-it/grav-facebook-feed/README.md
 license: MIT
 
 form:
