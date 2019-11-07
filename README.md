@@ -1,5 +1,15 @@
 # Facebook Feed Plugin by Bjoern Bohr
 
+
+## Installation
+Installing the Facebook-feed plugin can be done in one of two ways. Using GPM (Grav Package Manager) installation method or the manual method via a zip file.
+
+## GPM Installation 
+
+The simplest way to install this plugin is via the Grav Package Manager (GPM) through your system's Terminal . From the root of your Grav install type:
+
+**bin/gpm install facebook-feed**
+
 ## Manual Installation
 
 1. Download the Plugin
