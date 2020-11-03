@@ -60,6 +60,8 @@ class FacebookFeedPlugin extends Plugin {
             //Get Messages
             if(property_exists($val, 'message')) {
                 $message = $val->message;
+            } else {
+                $message = '';
             }
 
             // Get Album Images
