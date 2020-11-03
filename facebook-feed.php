@@ -23,6 +23,13 @@ class FacebookFeedPlugin extends Plugin {
     public function onTwigInitialized() {
         $this->grav['twig']->twig->addFunction(new \Twig_SimpleFunction('facebook_feed',
             [$this, 'getFacebookFeed']));
+
+        //Load CSS
+        if ($this->config->get('plugins.facebook-feed.fb_settings.enableCSS') == true || $this->config->get('plugins.facebook-feed.fb_settings.enableCSS') == null && $this->config->get('plugins.facebook-feed.fb_settings.enableCSS') != false ) {
+            $this->grav['assets']->add('plugins://facebook-feed/css/feed.css');
+        } else {
+            return false;
+        }
     }
 
     //Add current directory to twig lookup paths.
@@ -32,6 +39,8 @@ class FacebookFeedPlugin extends Plugin {
 
 
     public function getFacebookFeed() {
+
+
         // Get Configs from blueprint
         $pageId = $this->config->get('plugins.facebook-feed.fb_settings.page_id');
         $accessToken = $this->config->get('plugins.facebook-feed.fb_settings.token');
