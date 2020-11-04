@@ -47,7 +47,7 @@ class FacebookFeedPlugin extends Plugin {
         $limit = $this->config->get('plugins.facebook-feed.fb_settings.limit');
 
         // Generate API with Page Id and Token
-        $url = 'https://graph.facebook.com/v4.0/' . $pageId . '/posts?fields=attachments,created_time,message&access_token=' . $accessToken . '&limit=' . $limit;
+        $url = 'https://graph.facebook.com/v8.0/' . $pageId . '/posts?fields=attachments,created_time,message&access_token=' . $accessToken . '&limit=' . $limit;
 
         // Check 200 Ok
         function get_http_response_code($url) {
