@@ -69,8 +69,6 @@ class FacebookFeedPlugin extends Plugin {
             //Get Messages
             if(property_exists($val, 'message')) {
                 $message = $val->message;
-            } else {
-                $message = '';
             }
 
             // Get Album Images
@@ -82,6 +80,10 @@ class FacebookFeedPlugin extends Plugin {
                         $albumImages = $key->media->image->src;
                         array_push($album, $albumImages);
                     }
+                }
+                if(property_exists($val->attachments->data[0], 'description')) {
+                    $description = $val->attachments->data[0]->description;
+                    $message = $description;
                 }
             }
 
